@@ -145,6 +145,20 @@
   }
   .voice-empty p{font-size:15px; line-height:2;}
   .voice-empty .tag{font-family:'Barlow Condensed'; letter-spacing:.2em; color:var(--lime); font-weight:700; font-size:13px; margin-bottom:14px; text-transform:uppercase;}
+  .testimonial-list{display:flex; flex-direction:column; gap:24px; margin-bottom:28px;}
+  .testimonial-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:36px 38px;}
+  .testimonial-tags{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px;}
+  .testimonial-tags .pill{padding:8px 18px; font-size:13px;}
+  .testimonial-quote{font-size:15px; line-height:2.05; color:var(--mute);}
+  .testimonial-quote::before{content:'"'; color:var(--lime); font-family:'Barlow Condensed'; font-size:32px; line-height:0; position:relative; top:10px; margin-right:4px;}
+  .testimonial-quote.clamped{display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;}
+  .testimonial-toggle{
+    margin-top:16px; background:none; border:none; padding:0; cursor:pointer;
+    font-family:'Barlow Condensed'; font-weight:700; font-size:14px; letter-spacing:.04em;
+    color:var(--lime); display:inline-flex; align-items:center; gap:6px;
+  }
+  .testimonial-toggle::after{content:'▾'; font-size:11px; transition:transform .2s ease;}
+  .testimonial-toggle.open::after{transform:rotate(180deg);}
 
   /* TERMS */
   .terms-box{background:var(--panel); border:1px solid var(--line); padding:0; max-height:420px; overflow-y:auto; border-radius:var(--radius);}
@@ -359,9 +373,16 @@
   <div class="wrap">
     <div class="eyebrow">Voice</div>
     <h2 class="sec-title" style="margin-bottom:32px;">お客様の声</h2>
+    <div class="testimonial-list">
+      <div class="testimonial-card">
+        <div class="testimonial-tags"><span class="pill">マンツーマンレッスン</span><span class="pill">中学生</span></div>
+        <p class="testimonial-quote clamped">息子がハンドボール部に入部して4ヶ月。試合に出る機会は増えたものの、ディフェンスを突破できず、なかなかシュートチャンスを作れずに悩んでいました。そんな時に、偶然インスタグラムで「NY METHOD」の投稿を見かけて問い合わせをしました。一番心配だったのは「練習場所の確保」でしたが、公園のグラウンドでも問題ないと言っていただけたので、安心してお願いすることができました。息子が特に知りたかったロングシュートとフェイントについて、理論とコツを分かりやすく教えていただき、本人も「次の試合で再現できそう！」と手応えを感じています。始めたばかりの時期にマンツーマンレッスンを受けるのは贅沢かもしれないと迷いましたが、変な癖がつく前に正しいフォームを教わることができて、本当によかったと思っています。</p>
+        <button type="button" class="testimonial-toggle" onclick="const q=this.previousElementSibling; const open=q.classList.toggle('clamped')===false; this.classList.toggle('open', open); this.textContent = open ? '閉じる' : '続きを読む';">続きを読む</button>
+      </div>
+    </div>
     <div class="voice-empty">
-      <div class="tag">Coming Soon</div>
-      <p>レッスンを受けた選手・指導者の皆さまの声を、<br>写真とあわせてこちらに掲載していきます。</p>
+      <div class="tag">More Coming Soon</div>
+      <p>レッスンを受けた選手・指導者の皆さまの声を、<br>写真とあわせてこちらに追加していきます。</p>
     </div>
   </div>
 </section>
